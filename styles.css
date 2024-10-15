@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 28px;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Form */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Full-Width Row for Name Field */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Label Styling */
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+/* Input and Select Styling */
+input, select {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%; /* Ensures inputs and selects are full-width */
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+
+/* Number Input Styling */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Hide number input arrows in Chrome, Safari, and Edge */
+    margin: 0;
+}
+
+/* Button Styling */
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-column: span 2; /* Button spans both columns */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Prediction Message */
+h2 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #343a40;
+    text-align: center;
+    grid-column: span 2; /* Prediction message spans both columns */
+}
+
+p {
+    font-size: 18px;
+    color: #6c757d;
+    text-align: center;
+    grid-column: span 2; /* Message spans both columns */
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Diabetes Prediction System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction System / मधुमेह पूर्वानुमान प्रणाली</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="full-width">
+                <label for="name">Patient's Name / मरीज का नाम:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="age">Age / आयु:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div>
+                <label for="gender">Gender / लिंग:</label>
+                <select id="gender" name="gender" required>
+                    <option value="0">Female / महिला</option>
+                    <option value="1">Male / पुरुष</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="bgl">Blood Glucose Level / रक्त शर्करा स्तर:</label>
+                <input type="number" id="bgl" name="bgl" required>
+            </div>
+
+            <div>
+                <label for="hb">HbA1c Level / एचबीए1सी स्तर:</label>
+                <input type="number" id="hb" name="hb" step="0.1" required>
+            </div>
+
+            <div>
+                <label for="hyper">Hypertension / उच्च रक्तचाप:</label>
+                <select id="hyper" name="hyper" required>
+                    <option value="0">No / नहीं</option>
+                    <option value="1">Yes / हां</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="hd">Heart Disease / दिल की बीमारी:</label>
+                <select id="hd" name="hd" required>
+                    <option value="0">No / नहीं</option>
+                    <option value="1">Yes / हां</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="bmi">BMI / बीएमआई:</label>
+                <input type="number" id="bmi" name="bmi" step="0.1" required>
+            </div>
+
+            <div>
+                <label for="sm">Smoking History / धूम्रपान का इतिहास:</label>
+                <select id="sm" name="sm" required>
+                    <option value="0">No Info / कोई जानकारी नहीं</option>
+                    <option value="1">Current / वर्तमान</option>
+                    <option value="2">Ever / कभी</option>
+                    <option value="3">Former / पूर्व</option>
+                    <option value="4">Never / कभी नहीं</option>
+                    <option value="5">Not Current / वर्तमान नहीं</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <h2>Prediction: {{ prediction }}</h2>
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
